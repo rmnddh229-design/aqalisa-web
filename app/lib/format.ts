@@ -1,1 +1,1 @@
-export const eth = (v: number) => `${v} ETH`;
+export const eth = (v:number)=>`${v} ETH`;

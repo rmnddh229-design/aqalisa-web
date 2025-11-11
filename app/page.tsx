@@ -1,36 +1,28 @@
-import ParallaxHero from "../components/ParallaxHero";
-import CursorGlow from "../components/CursorGlow";
-import MagneticButton from "../components/MagneticButton";
+import Link from "next/link";
+import ThreeHero from "../components/ThreeHero";
 import ProductGrid from "../components/ProductGrid";
-import { Reveal } from "../components/Motion";
-import BrandMarquee from "../components/BrandMarquee";
 
 export default function HomePage() {
   return (
     <div className="space-y-12">
-      <CursorGlow />
-      <ParallaxHero />
-
-      <BrandMarquee />
-
-      <section className="space-y-4">
-        <Reveal><h2 className="text-xl font-medium">Featured</h2></Reveal>
-        <Reveal delay={.1}><ProductGrid /></Reveal>
+      <section className="text-center space-y-6 py-8">
+        <h1 className="text-4xl sm:text-6xl font-semibold tracking-tight">
+          Aqalisa.id — <span className="text-brand-500">premium</span> hijab eCommerce
+        </h1>
+        <p className="text-white/70 max-w-2xl mx-auto">
+          Style muslimah elegan tanpa ribet. 3D hero, wallet connect, on-chain checkout.
+        </p>
+        <div className="flex justify-center gap-3">
+          <Link href="/shop" className="btn">Explore Products</Link>
+          <Link href="/checkout" className="btn-outline">Checkout Demo</Link>
+        </div>
       </section>
 
-      <section className="grid md:grid-cols-3 gap-6">
-        {[
-          ["Wallet Connect", "RainbowKit + Wagmi for a smooth connect flow."],
-          ["On-chain Checkout", "Demo sendTransaction on testnets."],
-          ["3D Ready", "Swap to GLTF models for product hero."]
-        ].map(([title, desc], i) => (
-          <Reveal key={i} delay={i * .1}>
-            <div className="card p-6">
-              <h3 className="text-lg font-semibold mb-2">{title}</h3>
-              <p className="text-white/70">{desc}</p>
-            </div>
-          </Reveal>
-        ))}
+      <ThreeHero />
+
+      <section className="space-y-4">
+        <h2 className="text-xl font-medium">Featured</h2>
+        <ProductGrid />
       </section>
     </div>
   );

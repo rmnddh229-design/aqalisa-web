@@ -1,7 +1,6 @@
 "use client";
 import useCart from "../lib/cart";
 import Link from "next/link";
-
 export default function CartPage() {
   const { items, remove } = useCart();
   const total = items.reduce((a, i) => a + i.product.priceEth * i.qty, 0);
