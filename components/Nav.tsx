@@ -2,8 +2,7 @@
 import Link from "next/link";
 import { ShoppingCart } from "lucide-react";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import useCart from "../lib/cart";
-
+import useCart from "@/app/lib/cart";
 export default function Nav() {
   const items = useCart((s) => s.items);
   const count = items.reduce((a, i) => a + i.qty, 0);
